@@ -42,3 +42,22 @@ p <- plot_ly(x = x, y = y, type = 'scatter', mode = 'markers',
 
 # Display the plot
 p
+
+
+# Fixing vector assignment
+x <- c(1, 2, 3, 4)  # Correct
+# x <- c(1, 2, 3, 4  # Wrong: Missing closing parenthesis
+
+# Fixing sum calculation
+sum_x <- sum(x) / length(x)  # Correct
+# sum_x <- sum[x] / length(x)  # Wrong: Used square brackets
+
+# Fixing if condition
+if (mean(x) > 2) { print("Greater than 2") } else { print("Less than or equal to 2") }  
+# if x > 2 { print("Greater than 2") }  # Wrong: Missing parentheses
+
+# Fixing loop range
+for (i in -5:1) print(i)  # Correct
+# for (i in 1:-5) print(i)  # Wrong: Invalid range
+
+print(sum_x)  # Print correct mean value
