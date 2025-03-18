@@ -63,4 +63,48 @@ ts_xts <- as.xts(ts_zoo)
 # Plot using base plot
 plot(ts_xts, main = "Sample Time-Series Plot", col = "blue", major.ticks = "months")
 
+# Save model summary and confusion matrix to a text file
+sink("ML_results.txt")
+cat("---- Decision Tree Model Summary ----\n")
+print(model)
+
+cat("\n\n---- Confusion Matrix ----\n")
+print(conf_mat)
+
+sink()
+
+
+
+library(lubridate)
+library(rvest)
+
+# Open connection to text file
+sink("Data_Analysis/Task4_results.txt")
+
+# -------------------------------
+# 1. Date Parsing and Formatting (lubridate)
+# -------------------------------
+dates <- c("2025-03-18", "18-03-2025", "March 18, 2025", "03/18/25")
+parsed_dates <- parse_date_time(dates, orders = c("ymd", "dmy", "B d, Y", "mdy"))
+formatted_dates <- format(parsed_dates, "%A, %d %B %Y")
+
+cat("Formatted Dates:\n")
+print(formatted_dates)
+
+# -------------------------------
+# 2. Web Scraping (rvest)
+# -------------------------------
+url <- "http://books.toscrape.com/"
+webpage <- read_html(url)
+
+titles <- webpage %>%
+  html_nodes(".product_pod h3 a") %>%
+  html_attr("title")
+
+cat("\nSample Book Titles Scraped:\n")
+print(head(titles))
+
+# Close file connection
+sink()
+
 
