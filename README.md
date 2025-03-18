@@ -8,11 +8,11 @@
 
 </div>
 
-## 📚 About This Repository
+## About This Repository
 
-Welcome to my R Programming Laboratory Work repository! This is a comprehensive collection of my work in R, focusing on Machine Learning projects and data analysis tasks. Here, you'll find practical implementations, experimental analyses, and project work that demonstrates the application of R in solving real-world problems.
+Welcome to our R Programming Laboratory Work repository! This is a comprehensive collection of our work in R, focusing on Machine Learning projects and data analysis tasks. Here, you'll find practical implementations, experimental analyses, and project work that demonstrates the application of R in solving real-world problems.
 
-## 🎯 Repository Focus
+## Repository Focus
 
 - **Machine Learning Implementations**
 - **Statistical Analysis**
@@ -20,7 +20,7 @@ Welcome to my R Programming Laboratory Work repository! This is a comprehensive 
 - **Predictive Modeling**
 - **Data Preprocessing Techniques**
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **R Programming Language**
 - **RStudio**
@@ -31,7 +31,7 @@ Welcome to my R Programming Laboratory Work repository! This is a comprehensive 
   - `dplyr` for data transformation
   - And many more!
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 R_Lab_Work/
@@ -41,7 +41,7 @@ R_Lab_Work/
 └── Utilities/            # Helper functions and tools
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository:
    ```bash
@@ -53,7 +53,7 @@ R_Lab_Work/
    install.packages(c("tidyverse", "ggplot2", "caret"))
    ```
 
-## 💡 Contributing
+## Contributing
 
 Feel free to:
 - Fork the repository
@@ -61,11 +61,16 @@ Feel free to:
 - Submit pull requests
 - Open issues for discussions or bug reports
 
-## 📫 Contact
+## Team Members
 
-- GitHub: [@AleenaTahir1](https://github.com/AleenaTahir1)
+- [@AleenaTahir1](https://github.com/AleenaTahir1)
+- [@Razee4315](https://github.com/Razee4315) (Saqlain Abbas)
 
-## ⭐ Show Your Support
+## Contact
+
+Feel free to reach out to any of our team members through GitHub.
+
+## Show Your Support
 
 If you find this repository helpful, please consider giving it a star!
 
