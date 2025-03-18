@@ -63,7 +63,7 @@ Feel free to:
 
 ## Team Members
 
-- Aleena tahir (  [@AleenaTahir1](https://github.com/AleenaTahir1) ) 
+- Aleena Tahir (  [@AleenaTahir1](https://github.com/AleenaTahir1) ) 
 - Saqlain Abbas ( [@Razee4315](https://github.com/Razee4315) )
 
 ## Contact
