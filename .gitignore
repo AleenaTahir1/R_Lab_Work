@@ -4,9 +4,6 @@
 .Rproj.user/
 *.Rproj
 
-# Data files (if they're large or sensitive)
-#*.csv
-#*.xlsx
 
 
 # System files
