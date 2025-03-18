@@ -1,0 +1,11 @@
+Formatted Dates:
+[1] "Tuesday, 18 March 2025" "Tuesday, 18 March 2025"
+[3] "Tuesday, 18 March 2025" "Tuesday, 18 March 2025"
+
+Sample Book Titles Scraped:
+[1] "A Light in the Attic"                 
+[2] "Tipping the Velvet"                   
+[3] "Soumission"                           
+[4] "Sharp Objects"                        
+[5] "Sapiens: A Brief History of Humankind"
+[6] "The Requiem Red"                      
