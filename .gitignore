@@ -4,12 +4,7 @@
 .Rproj.user/
 *.Rproj
 
-# Data files (if they're large or sensitive)
-*.csv
-*.xlsx
-*.xls
-*.rds
-*.RData
+
 
 # System files
 .DS_Store
@@ -22,10 +17,7 @@ Thumbs.db
 # Log files
 *.log
 
-# Output files
-*.pdf
-*.html
-*.docx
+
 
 # Temporary files
 *~
