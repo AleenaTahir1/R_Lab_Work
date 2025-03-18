@@ -5,11 +5,9 @@
 *.Rproj
 
 # Data files (if they're large or sensitive)
-*.csv
-*.xlsx
-*.xls
-*.rds
-*.RData
+#*.csv
+#*.xlsx
+
 
 # System files
 .DS_Store
