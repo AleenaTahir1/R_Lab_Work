@@ -1,0 +1,62 @@
+---- Decision Tree Model Summary ----
+CART 
+
+105 samples
+  4 predictor
+  3 classes: 'setosa', 'versicolor', 'virginica' 
+
+No pre-processing
+Resampling: Bootstrapped (25 reps) 
+Summary of sample sizes: 105, 105, 105, 105, 105, 105, ... 
+Resampling results across tuning parameters:
+
+  cp         Accuracy   Kappa    
+  0.0000000  0.9429947  0.9133847
+  0.4571429  0.7328339  0.6123754
+  0.5000000  0.5384016  0.3385570
+
+Accuracy was used to select the optimal model using the
+ largest value.
+The final value used for the model was cp = 0.
+
+
+---- Confusion Matrix ----
+Confusion Matrix and Statistics
+
+            Reference
+Prediction   setosa versicolor virginica
+  setosa         15          0         0
+  versicolor      0         14         2
+  virginica       0          1        13
+
+Overall Statistics
+                                         
+               Accuracy : 0.9333         
+                 95% CI : (0.8173, 0.986)
+    No Information Rate : 0.3333         
+    P-Value [Acc > NIR] : < 2.2e-16      
+                                         
+                  Kappa : 0.9            
+                                         
+ Mcnemar's Test P-Value : NA             
+
+Statistics by Class:
+
+                     Class: setosa Class: versicolor
+Sensitivity                 1.0000            0.9333
+Specificity                 1.0000            0.9333
+Pos Pred Value              1.0000            0.8750
+Neg Pred Value              1.0000            0.9655
+Prevalence                  0.3333            0.3333
+Detection Rate              0.3333            0.3111
+Detection Prevalence        0.3333            0.3556
+Balanced Accuracy           1.0000            0.9333
+                     Class: virginica
+Sensitivity                    0.8667
+Specificity                    0.9667
+Pos Pred Value                 0.9286
+Neg Pred Value                 0.9355
+Prevalence                     0.3333
+Detection Rate                 0.2889
+Detection Prevalence           0.3111
+Balanced Accuracy              0.9167
