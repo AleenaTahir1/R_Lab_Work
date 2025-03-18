@@ -62,4 +62,9 @@ avg_subject <- dt[, .(Average_Score = mean(Score)), by = Subject]
 print(avg_subject)
 
 
+write.csv(long_data, "Data_Analysis/long_data.csv", row.names = FALSE)
+write.csv(avg_scores, "Data_Analysis/avg_scores.csv", row.names = FALSE)
+write.csv(filtered_data, "Data_Analysis/filtered_data.csv", row.names = FALSE)
+
+
 
