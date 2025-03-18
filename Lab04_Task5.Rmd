@@ -1,0 +1,44 @@
+---
+title: "Basic R Markdown"
+author: "Saqlain and Aleena"
+date: "18-March-2025"
+output: html_document
+---
+
+## Introduction
+
+This is a simple R Markdown file that outputs to HTML.
+
+## About
+
+This document was created by Saqlain and Aleena to demonstrate basic R Markdown usage.
+
+## R Code Example
+{r}
+# A simple calculation
+x <- 5
+y <- 10
+x + y
+## Summary
+
+This document demonstrates basic R Markdown usage for creating HTML reports.
+
+
+
+install.packages("plotly")
+library(plotly)
+
+# Create sample data
+x <- c(1:100)
+y <- sin(x/10) + rnorm(100, sd=0.3)
+
+# Create interactive plot
+p <- plot_ly(x = x, y = y, type = 'scatter', mode = 'markers',
+             marker = list(size = 8, color = y, colorscale = 'Viridis'),
+             text = paste("Point:", x, ",", round(y, 2))) %>%
+  layout(title = "Interactive Scatter Plot",
+         xaxis = list(title = "X Values"),
+         yaxis = list(title = "Y Values"))
+
+# Display the plot
+p
