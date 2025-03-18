@@ -1,5 +1,5 @@
 data(mtcars)
 View(mtcars)
 str(mtcars)
-head(mtcars)        # Shows first 6 rows
+head(mtcars)        
 summary(mtcars)
