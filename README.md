@@ -1,4 +1,4 @@
-# 🔬 R Laboratory Work & Projects
+# R Laboratory Work & Projects
 
 <div align="center">
   
