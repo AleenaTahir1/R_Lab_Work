@@ -31,3 +31,5 @@ print(confMat)
 
 # Visualize the decision tree
 rpart.plot(model)
+
+print("Decision Tree formed")
