@@ -17,10 +17,7 @@ Thumbs.db
 # Log files
 *.log
 
-# Output files
-*.pdf
-*.html
-*.docx
+
 
 # Temporary files
 *~

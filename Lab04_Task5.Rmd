@@ -9,9 +9,9 @@ output: html_document
 
 This is a simple R Markdown file that outputs to HTML.
 
-## About
+## About Document
 
-This document was created by Saqlain and Aleena to demonstrate basic R Markdown usage.
+This document was created by Saqlain and Aleena to demonstrate basic of R Markdown.
 
 ## R Code Example
 {r}
