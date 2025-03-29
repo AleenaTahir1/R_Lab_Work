@@ -1,0 +1,193 @@
+---
+title: "Programming for AI (Lab 5)"
+author: "Aleena Tahir (F23607001) And Saqlain Abbas (F23607048)"
+output: html_document
+---
+
+# Task 1: Getting Started
+
+## Objective
+To set up and familiarize yourself with R-Studio and Jupyter for R programming.
+
+## Steps
+
+### 1. Install R and R-Studio
+Download and install R from the [CRAN website](https://cran.r-project.org/) and R-Studio from the [RStudio website](https://posit.co/).
+
+### 2. Install Jupyter
+Install Jupyter using Python's `pip`:
+
+```bash
+pip install jupyterlab
+```
+
+Install the `IRkernel` for R:
+
+```r
+install.packages("IRkernel")
+IRkernel::installspec() # Make R available as a Jupyter kernel
+```
+
+### 3. Explore Interfaces
+- Familiarize yourself with R-Studio's script editor, console, environment pane, and plots pane.
+- Launch JupyterLab, create a new notebook, and select R as the kernel.
+
+### 4. Test Basic Commands
+Run the following in R-Studio or JupyterLab:
+
+```r
+print("Hello, R!")
+```
+
+Verify the installation:
+
+```r
+sessionInfo()
+```
+
+# Task 2: Working with Data Imports
+
+## Objective
+To import and load different types of data into R for analysis.
+
+## Steps and Example Codes
+
+### 1. Load the Iris Dataset
+
+```r
+install.packages("datasets")
+library(datasets)
+data_iris <- iris
+head(data_iris)
+```
+
+# Task 3: Data Cleaning and Preprocessing
+
+## Objective
+To clean and preprocess data using popular R libraries.
+
+## Steps and Example Codes
+
+### 1. Handle Missing Values
+
+```r
+clean_data <- na.omit(data_iris)
+```
+
+### 2. Filter and Select Data
+
+```r
+library(dplyr)
+filtered_data <- data_iris %>% filter(Sepal.Length > 5)
+selected_data <- data_iris %>% select(Sepal.Length, Sepal.Width, Species)
+```
+
+### 3. Summarize Data
+
+```r
+summary_data <- data_iris %>%
+  group_by(Species) %>%
+  summarize(mean_sepal_length = mean(Sepal.Length, na.rm = TRUE))
+print(summary_data)
+```
+
+### 4. Transform Variables
+
+```r
+transformed_data <- data_iris %>% mutate(Petal.Area = Petal.Length * Petal.Width)
+```
+
+# Task 4: Data Visualization
+
+## Objective
+To create visualizations for data analysis and insights using `ggplot2` and `plotly`.
+
+## Steps and Example Codes
+
+### 1. Bar Chart with `ggplot2`
+
+```r
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(data_iris, aes(x = Species, y = Sepal.Length)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Sepal Length by Species", x = "Species", y = "Sepal Length")
+```
+
+### 2. Scatter Plot with `ggplot2`
+
+```r
+ggplot(data_iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+  geom_point() +
+  labs(title = "Scatter Plot of Sepal vs Petal Length", x = "Sepal Length", y = "Petal Length")
+```
+
+### 3. Interactive Visualization with `plotly`
+
+```r
+install.packages("plotly")
+library(plotly)
+plot_ly(data = data_iris, x = ~Sepal.Length, y = ~Petal.Length, type = "scatter", mode = "markers", color = ~Species)
+```
+
+### 4. Save Plots
+
+```r
+ggsave("iris_bar_chart.png")
+```
+
+# Task 5: Advanced Analysis
+
+## Objective
+To perform advanced data analysis and modeling using R.
+
+## Steps and Example Codes
+
+### 1. Linear Regression
+
+```r
+model <- lm(Sepal.Length ~ Petal.Length, data = data_iris)
+summary(model)
+```
+
+### 2. Clustering
+
+```r
+clusters <- kmeans(data_iris[, c("Sepal.Length", "Sepal.Width")], centers = 3)
+data_iris$cluster <- clusters$cluster
+```
+
+### 3. Machine Learning with `caret`
+
+```r
+install.packages("caret")
+library(caret)
+model <- train(Species ~ ., data = data_iris, method = "rf", trControl = trainControl(method = "cv", number = 5))
+print(model)
+```
+
+# Task 6: Reporting and Documentation
+
+## Objective
+To generate reports and document analysis using R Markdown in R-Studio and JupyterLab.
+
+## Steps and Example Codes
+
+### 1. Create R Markdown File in R-Studio
+- Go to File > New File > R Markdown.
+- Add text, code chunks, and plots like:
+
+```r
+{r}
+plot(data_iris$Sepal.Length, data_iris$Sepal.Width)
+```
+
+### 2. Export Data
+
+```r
+write.csv(clean_data, "cleaned_iris_data.csv")
+```
+
+### 3. Generate Reports in Jupyter
+- Use Markdown cells for explanations.
+- Run analysis and visualization codes in separate cells.
