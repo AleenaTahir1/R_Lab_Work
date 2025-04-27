@@ -1,0 +1,62 @@
+---
+title: "Lab 6 Report"
+author: "Aleena Tahir (F23607001) & Saqlain Abbas (F23607048)"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Core Task: Balance the iris dataset (remove 80% of setosa class) using oversampling
+
+```{r remove-setosa}
+# Load necessary libraries
+if (!require(ROSE)) install.packages("ROSE")
+library(ROSE)
+
+# Load iris dataset
+iris_mod <- iris
+setosa_idx <- which(iris_mod$Species == "setosa")
+set.seed(123)
+remove_idx <- sample(setosa_idx, size = 0.8 * length(setosa_idx))
+iris_mod <- iris_mod[-remove_idx, ]
+cat("Class distribution after removing 80% setosa:\n")
+print(table(iris_mod$Species))
+```
+
+## Oversample to balance classes
+
+```{r oversample}
+if (!require(caret)) install.packages("caret")
+library(caret)
+iris_balanced <- upSample(x = iris_mod[, -5], y = iris_mod$Species, yname = "Species")
+cat("Class distribution after oversampling:\n")
+print(table(iris_balanced$Species))
+```
+
+## Optional Task: Apply SMOTE to the modified iris dataset and compare results
+
+```{r smote}
+if (!require(smotefamily)) install.packages("smotefamily")
+library(smotefamily)
+iris_smote <- SMOTE(iris_mod[,-5], iris_mod$Species, K = 5)
+iris_smote_data <- iris_smote$data
+iris_smote_data$Class <- as.factor(iris_smote_data$class)
+cat("Class distribution after SMOTE:\n")
+print(table(iris_smote_data$Class))
+```
+
+## Advanced Task: Hyperparameter tuning on a decision tree model
+
+```{r hyperparameter-tuning}
+if (!require(caret)) install.packages("caret")
+library(caret)
+tune_grid <- expand.grid(cp = seq(0.01, 0.1, by = 0.01))
+dt_model <- train(Species ~ ., data = iris_balanced, method = "rpart",
+                  tuneGrid = tune_grid,
+                  trControl = trainControl(method = "cv", number = 5))
+print(dt_model)
+plot(dt_model)
+```
